@@ -5,11 +5,60 @@ using System.Threading.Tasks;
 using Microsoft.Azure.Cosmos;
 namespace ProyectoFinal_AndreRodriguez.Models
 {
+    public interface ICosmosDBServiceMaquina
+    {
+        Task<IEnumerable<Maquina>> GetMaquinasAsync(string query);
+        Task<Maquina> GetMaquinaAsync(string id);
+        Task AddMaquinaAsync(Maquina maquina);
+        Task UpdateMaquinaAsync(string id, Maquina maquina);
+        Task DeleteMaquinaAsync(string id);
+    }
     public class CosmosDBServiceMaquina
     {
-        public interface ICosmosDBServiceMaquina
+        private Container _container;
+
+        public CosmosDBServiceMaquina(CosmosClient client, string databaseName, string containerName)
         {
-            
+            this._container = client.GetContainer(databaseName, containerName);
+        }
+        public async Task AddMaquinaAsync(Maquina item)
+        {
+            await this._container.CreateItemAsync<Maquina>(item, new PartitionKey(item.id));
+        }
+
+        public async Task DeleteMaquinaAsync(string id)
+        {
+            await this._container.DeleteItemAsync<Maquina>(id, new PartitionKey(id));
+        }
+
+        public async Task<Maquina> GetMaquinaAsync(string id)
+        {
+            try
+            {
+                ItemResponse<Maquina> response = await this._container.ReadItemAsync<Maquina>(id, new PartitionKey(id));
+                return response.Resource;
+            }
+            catch (CosmosException ex) when (ex.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                return null;
+            }
+        }
+
+        public async Task<IEnumerable<Maquina>> GetMaquinasAsync(string queryString)
+        {
+            var query = this._container.GetItemQueryIterator<Maquina>(new QueryDefinition(queryString));
+            List<Maquina> results = new List<Maquina>();
+            while (query.HasMoreResults)
+            {
+                var response = await query.ReadNextAsync();
+                results.AddRange(response.ToList());
+            }
+            return results;
+        }
+
+        public async Task UpdateMaquinaAsync(string id, Maquina item)
+        {
+            await this._container.UpsertItemAsync<Maquina>(item, new PartitionKey(id));
         }
     }
 }
