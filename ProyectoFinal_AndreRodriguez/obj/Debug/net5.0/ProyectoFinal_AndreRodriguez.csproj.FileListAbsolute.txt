@@ -55,13 +55,6 @@ C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_Andre
 C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\ProyectoFinal_AndreRodriguez.TagHelpers.input.cache
 C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\ProyectoFinal_AndreRodriguez.TagHelpers.output.cache
 C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\ProyectoFinal_AndreRodriguez.RazorCoreGenerate.cache
-C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
-C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\Razor\Pages\Index.cshtml.g.cs
-C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\Razor\Pages\Privacy.cshtml.g.cs
-C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\Razor\Pages\Shared\_Layout.cshtml.g.cs
-C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\Razor\Pages\_ViewImports.cshtml.g.cs
-C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\Razor\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\ProyectoFinal_AndreRodriguez.RazorTargetAssemblyInfo.cache
 C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\ProyectoFinal_AndreRodriguez.RazorTargetAssemblyInfo.cs
 C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\ProyectoFinal_AndreRodriguez.Views.pdb
@@ -153,3 +146,11 @@ C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_Andre
 C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\ProyectoFinal_AndreRodriguez.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\Razor\Views\Error.cshtml.g.cs
+C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\Razor\Views\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\Razor\Views\Privacy.cshtml.g.cs
+C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Admin\Desktop\Proyecto\ProyectoFinal_AndreRodriguez\ProyectoFinal_AndreRodriguez\obj\Debug\net5.0\Razor\Views\Product\Crear.cshtml.g.cs
