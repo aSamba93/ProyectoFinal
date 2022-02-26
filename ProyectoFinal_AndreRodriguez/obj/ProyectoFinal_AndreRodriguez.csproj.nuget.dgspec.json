@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\Proyecto\\ProyectoFinal_AndreRodriguez\\ProyectoFinal_AndreRodriguez\\ProyectoFinal_AndreRodriguez.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\ProyectoF\\ProyectoFinal\\ProyectoFinal_AndreRodriguez\\ProyectoFinal_AndreRodriguez.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\Proyecto\\ProyectoFinal_AndreRodriguez\\ProyectoFinal_AndreRodriguez\\ProyectoFinal_AndreRodriguez.csproj": {
+    "C:\\Users\\Admin\\Desktop\\ProyectoF\\ProyectoFinal\\ProyectoFinal_AndreRodriguez\\ProyectoFinal_AndreRodriguez.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Proyecto\\ProyectoFinal_AndreRodriguez\\ProyectoFinal_AndreRodriguez\\ProyectoFinal_AndreRodriguez.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\ProyectoF\\ProyectoFinal\\ProyectoFinal_AndreRodriguez\\ProyectoFinal_AndreRodriguez.csproj",
         "projectName": "ProyectoFinal_AndreRodriguez",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\Proyecto\\ProyectoFinal_AndreRodriguez\\ProyectoFinal_AndreRodriguez\\ProyectoFinal_AndreRodriguez.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\ProyectoF\\ProyectoFinal\\ProyectoFinal_AndreRodriguez\\ProyectoFinal_AndreRodriguez.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\Proyecto\\ProyectoFinal_AndreRodriguez\\ProyectoFinal_AndreRodriguez\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\ProyectoF\\ProyectoFinal\\ProyectoFinal_AndreRodriguez\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -50,11 +50,15 @@
             },
             "Azure.Storage.Blobs": {
               "target": "Package",
-              "version": "[12.10.0, )"
+              "version": "[12.11.0-beta.3, )"
             },
             "Castle.Core": {
               "target": "Package",
               "version": "[4.4.1, )"
+            },
+            "Microsoft.AspNet.Web.Optimization": {
+              "target": "Package",
+              "version": "[1.1.3, )"
             },
             "Microsoft.AspNetCore.Mvc": {
               "target": "Package",

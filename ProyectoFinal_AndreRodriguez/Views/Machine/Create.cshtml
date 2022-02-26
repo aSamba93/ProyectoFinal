@@ -1,0 +1,58 @@
+﻿@model ProyectoFinal_AndreRodriguez.Models.Machine
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Machine</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateMachine">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>            
+            <div class="form-group">
+                <label asp-for="description_name" class="control-label"></label>
+                <input asp-for="description_name" class="form-control" />
+                <span asp-validation-for="description_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="qty_products_hour" class="control-label"></label>
+                <input asp-for="qty_products_hour" class="form-control" />
+                <span asp-validation-for="qty_products_hour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cost_operating_hour" class="control-label"></label>
+                <input asp-for="cost_operating_hour" class="form-control" />
+                <span asp-validation-for="cost_operating_hour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="repair_hours" class="control-label"></label>
+                <input asp-for="repair_hours" class="form-control" />
+                <span asp-validation-for="repair_hours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="date_purchase" class="control-label"></label>
+                <input asp-for="date_purchase" class="form-control" />
+                <span asp-validation-for="date_purchase" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="condition" /> @Html.DisplayNameFor(model => model.condition)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Machines">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

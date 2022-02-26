@@ -23,22 +23,47 @@ namespace ProyectoFinal_AndreRodriguez
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddRazorPages();
-            services.AddSingleton<ICosmosDBServiceProducto>(InitializeCosmosClientInstanceProductoAsync(Configuration.GetSection("CosmosDb")).GetAwaiter().GetResult());
+        {            
+            services.AddSingleton<ICosmosDBServiceProduct>(InitializeCosmosClientInstanceProductAsync(Configuration.GetSection("CosmosDb")).GetAwaiter().GetResult());
+            services.AddSingleton<ICosmosDBServiceMachine>(InitializeCosmosClientInstanceMachineAsync(Configuration.GetSection("CosmosDb")).GetAwaiter().GetResult());
+            services.AddSingleton<ICosmosDBServiceSimulation>(InitializeCosmosClientInstanceSimulationAsync(Configuration.GetSection("CosmosDb")).GetAwaiter().GetResult());
+            services.AddControllersWithViews();
         }
-
-        public static async Task<CosmosDBServiceProducto> InitializeCosmosClientInstanceProductoAsync(IConfigurationSection configurationSection)
+        public static async Task<CosmosDBServiceSimulation> InitializeCosmosClientInstanceSimulationAsync(IConfigurationSection configurationSection)
         {
             string databaseName = configurationSection.GetSection("DatabaseName").Value;
-            string containerName = configurationSection.GetSection("ContainerNameProducto").Value;
+            string containerName = configurationSection.GetSection("ContainerNameSimulation").Value;
             string account = configurationSection.GetSection("Account").Value;
             string key = configurationSection.GetSection("Key").Value;
             Microsoft.Azure.Cosmos.CosmosClient client = new Microsoft.Azure.Cosmos.CosmosClient(account, key);
-            CosmosDBServiceProducto cosmosDBService = new CosmosDBServiceProducto(client, databaseName, containerName);
+            CosmosDBServiceSimulation cosmosDBService = new CosmosDBServiceSimulation(client, databaseName, containerName);
+            Microsoft.Azure.Cosmos.DatabaseResponse database = await client.CreateDatabaseIfNotExistsAsync(databaseName);
+            await database.Database.CreateContainerIfNotExistsAsync(containerName, "/id");
+            return cosmosDBService;
+        }
+        public static async Task<CosmosDBServiceProduct> InitializeCosmosClientInstanceProductAsync(IConfigurationSection configurationSection)
+        {
+            string databaseName = configurationSection.GetSection("DatabaseName").Value;
+            string containerName = configurationSection.GetSection("ContainerNameProduct").Value;
+            string account = configurationSection.GetSection("Account").Value;
+            string key = configurationSection.GetSection("Key").Value;
+            Microsoft.Azure.Cosmos.CosmosClient client = new Microsoft.Azure.Cosmos.CosmosClient(account, key);
+            CosmosDBServiceProduct cosmosDBService = new CosmosDBServiceProduct(client, databaseName, containerName);
             Microsoft.Azure.Cosmos.DatabaseResponse database = await client.CreateDatabaseIfNotExistsAsync(databaseName);
             await database.Database.CreateContainerIfNotExistsAsync(containerName, "/id");
 
+            return cosmosDBService;
+        }
+        public static async Task<CosmosDBServiceMachine> InitializeCosmosClientInstanceMachineAsync(IConfigurationSection configurationSection)
+        {
+            string databaseName = configurationSection.GetSection("DatabaseName").Value;
+            string containerName = configurationSection.GetSection("ContainerNameMachine").Value;
+            string account = configurationSection.GetSection("Account").Value;
+            string key = configurationSection.GetSection("Key").Value;
+            Microsoft.Azure.Cosmos.CosmosClient client = new Microsoft.Azure.Cosmos.CosmosClient(account, key);
+            CosmosDBServiceMachine cosmosDBService = new CosmosDBServiceMachine(client, databaseName, containerName);
+            Microsoft.Azure.Cosmos.DatabaseResponse database = await client.CreateDatabaseIfNotExistsAsync(databaseName);
+            await database.Database.CreateContainerIfNotExistsAsync(containerName, "/id");
             return cosmosDBService;
         }
 
@@ -51,21 +76,19 @@ namespace ProyectoFinal_AndreRodriguez
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+                app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

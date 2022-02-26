@@ -9,45 +9,55 @@ namespace ProyectoFinal_AndreRodriguez.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly ICosmosDBServiceProducto _cosmosDbService;
-
-        public ProductController(ICosmosDBServiceProducto cosmosDBService)
+        private readonly ICosmosDBServiceProduct _cosmosDBService;
+        public ProductController(ICosmosDBServiceProduct cosmosDBService)
         {
-            this._cosmosDbService = cosmosDBService;
+            this._cosmosDBService = cosmosDBService;
         }
-        public IActionResult Crear()
+        public IActionResult Create()
         {
             return View();
         }
-        public async Task<ActionResult> Producto()
+
+        public async Task<IActionResult> Products()
         {
-            return View((await this._cosmosDbService.GetProductosAsync("SELECT * FROM producto")).ToList());
+            return View((await this._cosmosDBService.GetProductsAsync("SELECT * FROM producto")).ToList());
         }
-        public async Task<ActionResult> CrearProducto(Producto producto)
+        public async Task<ActionResult> CreateProduct(Product product)
         {
-            producto.Id = Guid.NewGuid().ToString();
-            await this._cosmosDbService.AddProductoAsync(producto);
-            return RedirectToAction("Producto");
-        }
-        public IActionResult Edit(Producto producto)
-        {
-            return View(producto);
+            //method for generate id
+            product.id = Guid.NewGuid().ToString();
+            await this._cosmosDBService.AddProductAsync(product);
+
+            return RedirectToAction("Products");
+
         }
 
-        public async Task<ActionResult> EditProducto(Producto producto)
+        public IActionResult Edit(Product product)
         {
-            await this._cosmosDbService.UpdateProductoAsync(producto.Id, producto);
-            return RedirectToAction("Producto");
-        }
-        public ActionResult Delete(Producto producto)
-        {
-            return View(producto);
+            return View(product);
         }
 
-        public async Task<ActionResult> DeleteProduct(Producto producto)
+        public async Task<ActionResult> EditProduct(Product product)
         {
-            await _cosmosDbService.DeleteProductoAsync(producto.Id);
-            return RedirectToAction("Producto");
+            await this._cosmosDBService.UpdateProductAsync(product.id, product);
+
+            return RedirectToAction("Products");
+
         }
+
+        public IActionResult Delete(Product product)
+        {
+            return View(product);
+        }
+
+        public async Task<ActionResult> DeleteProduct(Product product)
+        {
+            await this._cosmosDBService.DeleteProductAsync(product.id);
+
+            return RedirectToAction("Products");
+
+        }
+
     }
 }

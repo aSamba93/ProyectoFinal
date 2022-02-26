@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "cosmosdb1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.DocumentDB/databaseAccounts/proyectodbandre",
+      "type": "cosmosdb.azure",
+      "connectionId": "AccountEndpoint=https://proyectodbandre.documents.azure.com:443/;AccountKey=s7BfGAd8pikmiLlMRbjppKYm9qvAAYlUfuvq04Vrq9w8qlZbDTTpIKttS9ZZtQ9xBGLCeX4QLvuoo0AIlYwGHg==;",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}
